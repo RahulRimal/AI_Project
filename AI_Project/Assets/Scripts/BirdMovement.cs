@@ -6,7 +6,7 @@ public class BirdMovement : MonoBehaviour
 {
 
     Rigidbody2D rb;
-    Transform transform;
+    new Transform transform;
     
     public float jumpForce = 0f;
     [SerializeField]

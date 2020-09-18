@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PipesSpawner : MonoBehaviour
 {
-    public GameObject pipe;
+    public GameObject[] pipes;
 
     public float spawnRate = 2.5f;
     public float timeToSpawn = 0f;
@@ -12,15 +12,17 @@ public class PipesSpawner : MonoBehaviour
     
     void Start()
     {
-        timeToSpawn = spawnRate;
+        timeToSpawn = 0;
     }
 
 
     void Update()
     {
+        int pipeChoice = Random.Range(0, pipes.Length);
+
         if(timeToSpawn < 0)
         {
-            Instantiate(pipe, pipe.transform.position, Quaternion.identity);
+            Instantiate(pipes[pipeChoice], pipes[pipeChoice].transform.position, Quaternion.identity);
             timeToSpawn = spawnRate;
         }
 

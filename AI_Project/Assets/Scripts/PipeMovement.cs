@@ -11,7 +11,7 @@ public class PipeMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.left * pipeSpeed * Time.deltaTime);
-        Invoke("distroyPipes", 3.3f);
+        Invoke("distroyPipes", 5f);
     }
 
 
